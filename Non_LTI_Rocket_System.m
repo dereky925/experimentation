@@ -31,8 +31,7 @@ tspan = [0 300];  % 5 minutes total
 % ODE solver
 options = odeset('RelTol',1e-8, 'AbsTol',1e-8);
 [t, X] = ode45(@(t,x) rocketDynamics(t, x, g, rho, C_d, A, ...
-                                     T, mdot, t_burn), ...
-               tspan, x0, options);
+                                     T, mdot, t_burn), tspan, x0, options);
 
 % Extract solutions
 h = X(:,1);
