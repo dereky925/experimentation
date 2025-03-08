@@ -4,17 +4,21 @@ clear; clc; close all;
 mu = [1 1 1];
 
 % Define a 3x3 covariance matrix
-Sigma = [1 1.5 0.8;
-         1.5 3 1.2;
-         0.8 1.2 2];
+Sigma = [1    1.5    0.8;
+         1.5   3    1.2;
+         0.8   1.2   2];
 
-Sigma = [10 0 0;
-         0 1 0;
-         0 0 1];
+Sigma = [1    -1.5    0;
+         -1.5   3    0;
+         0    0  2];
+
+% Sigma = [1 0 0;
+%          0 10 0;
+%          0 0 1];
 
 % Rotate covariance by X degrees with pre and post multiplication
-rotx = 45;
-rotz = 90;
+rotx = 0;
+rotz = 0;
 
 % Rotate about y axis
 Sigma2 = R2(deg2rad(rotx)) * Sigma * R2(deg2rad(rotx))';
